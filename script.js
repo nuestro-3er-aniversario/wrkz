@@ -413,44 +413,36 @@ window.addEventListener("load", () => {
 // Lista de canciones para la playlist en orden
 // Lista de canciones apuntando a tu carpeta "musicas" con los nombres exactos
 const playlist = [
-    "Elvis Presley - Can't Help Falling In Love (Official Audio).mp3",
-    "Ed Sheeran - Perfect.mp3",
-    "Ben E. King - Stand By Me (Audio).mp3",
-    "Counting Crows - Accidentally In Love (Sub. Español Lyrics).mp3"
+    "musicas/Elvis Presley - Can't Help Falling In Love (Official Audio).mp3",
+    "musicas/Ed Sheeran - Perfect.mp3",
+    "musicas/Ben E. King - Stand By Me (Audio).mp3",
+    "musicas/Counting Crows - Accidentally In Love (Sub. Español Lyrics).mp3"
 ];
 
 let cancionActualIndex = 0;
 const reproductorAudio = document.getElementById("musicaFondo");
 
 if (reproductorAudio) {
-    reproductorAudio.volume = 0.25;
+    reproductorAudio.volume = 0.3;
 
     reproductorAudio.addEventListener("ended", () => {
         cancionActualIndex = (cancionActualIndex + 1) % playlist.length;
         reproductorAudio.src = playlist[cancionActualIndex];
-        reproductorAudio.play().catch(e => console.log("Error al reproducir siguiente canción:", e));
+        reproductorAudio.play().catch(e => console.log("Error al pasar de canción:", e));
     });
 }
 
-function controlarMusica() {
-    if (!reproductorAudio) return;
-    
-    if (reproductorAudio.paused) {
-        reproductorAudio.play();
-    } else {
-        reproductorAudio.pause();
-    }
-}
-
-function iniciarPlaylistConPrimerToque() {
-    if (reproductorAudio && reproductorAudio.paused) {
+// Función para activar el reproductor al primer toque/clic
+function activarMusicaConInteraccion() {
+    if (reproductorAudio) {
         reproductorAudio.play().then(() => {
-            console.log("Música iniciada correctamente.");
+            console.log("Música reproduciéndose.");
         }).catch(err => {
-            console.log("Esperando toque para reproducción:", err);
+            console.log("Error intentando reproducir audio:", err);
         });
     }
 }
 
-document.addEventListener("click", iniciarPlaylistConPrimerToque, { once: true });
-document.addEventListener("touchstart", iniciarPlaylistConPrimerToque, { once: true });
+// Escucha el primer clic o toque en cualquier lugar de la página
+document.addEventListener("click", activarMusicaConInteraccion, { once: true });
+document.addEventListener("touchstart", activarMusicaConInteraccion, { once: true });
