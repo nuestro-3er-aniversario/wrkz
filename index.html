@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Persona Especial ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- INTRO CINEMATOGRÁFICA -->
+    <div id="intro">
+        <canvas id="intro-canvas"></canvas>
+        <div id="intro-mensaje">Te Amo</div>
+    </div>
+
+    <!-- FONDO DE ESTRELLAS ANIMADAS -->
+    <div id="fondo-estrellas"></div>
+
+    <!-- PANTALLA DE INICIO / PORTADA -->
+    <section id="inicio" class="pantalla">
+        <div id="fondo-portada"></div>
+        <div class="estrellas">✨ ✨ ✨</div>
+        <div class="regalo" id="regalo" onclick="animarRegalo()">🎁</div>
+        <h1>Tengo algo para ti...</h1>
+        <p class="subtitulo">Una pequeña sorpresa hecha con mucho amor ❤️</p>
+        <button class="boton" onclick="abrirRegalo()">Abrir Regalo</button>
+    </section>
+
+    <!-- PANTALLA PRINCIPAL DE MENÚ -->
+    <section id="principal" class="pantalla">
+        <div id="fondo-principal"></div>
+        <div class="contenedor">
+            <span class="etiqueta">NUESTRO ESPACIO ;3</span>
+            <h2>FELIZ ANIVERSARIO MI AMOOOOOR ❤️</h2>
+            <p class="intro">
+                Bienvenida a tu regalooooo ;D ..preparé esta sección especial para recordarte lo tan importante
+                y especial q eres para mí, y celebrar todo el tiempo que llevamos juntos ;3
+            </p>
+
+            <div class="contador-tiempo" id="contador">
+                Cargando tiempo juntos...
+            </div>
+
+            <div class="menu">
+                <button onclick="mostrarSeccion('carta')">
+                    💌
+                    <span>Carta</span>
+                </button>
+
+                <button onclick="mostrarSeccion('fotos')">
+                    📸
+                    <span>Fotos</span>
+                </button>
+
+                <button onclick="mostrarSeccion('razones'); nuevaRazon();">
+                    💖
+                    <span>Razones</span>
+                </button>
+
+                <button onclick="mostrarSeccion('momentos')">
+                    ✨
+                    <span>Momentos</span>
+                </button>
+
+                <button onclick="mostrarSeccion('sorpresa')">
+                    🎁
+                    <span>Sorpresa</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CARTA -->
+    <div id="carta" class="seccion">
+        <div class="tarjeta carta">
+            <button class="cerrar" onclick="volverPrincipal()">✕</button>
+            <div class="icono-grande">💌</div>
+            <h2>Para ti mi princeshita 💕</h2>
+            <p>
+                Mi amor, quería preparar algo diferente para ti, un pequeño lugarcito en el mundo donde pudiera guardar aunque sea sholo un pedacito de todo lo lindo y bonito q siento por ti, poke si te soy sincero, si tuviera q contarte todo aquello q siento por ti, las páginas se quedarían cortas al igual q las palabras ;3..
+
+                muchas veces eh sentido q los días se pasan volando y.. ño nos detenemos a darnos cuenta de lo increíble q ha sido nuestro camino.. y justamente por eso, hoy quise hacer esta pausa sholo para decirte grashias.. grashias por cada sonrisa q me regalas, por cada conversación en la q se nos pasa el tiempo volando.. por tus abachitos q me regalan paz y tranquilidad.. y también por la forma en la q iluminas absolutamente todo a tu alrededor...
+            </p>
+            <p>
+                Contigo he aprendido lo bonito q es amar de verdad con el corazón abierto... te has convertido en mi refugio, en mi personita favorita, y en la razón detrás de muchísimos de mis momentos másh felices... cada recuerdo q hemos construido juntos lo guardo como un tesoro muy muy muuuuyyyy valioso dentro de mi corazoncito 🥹💕..
+
+                Espero q al recorrer esta página puedas sentir al menos un poquito del inmenso amor y el cariño con el q la preparé para ti ;3 muchísimas grashias por ser tú, por quedarte y formar parte de mi vida.. estos 3 años han pasado muy rápido.. y la verdad, yo shi quiero compartir todo el resto de mi vida a tu lado.. poke sholo contigo quiero estar, y poke sholo a ti te amo mi niña 💕
+
+                Feliz aniversario mi pequeña.. TE AMO CON TODO TODITO MI CORAZONCITO Y CON TODO TODITO MI SEEEEEERR 🥹💗💗💕💕
+
+            </p>
+            <p class="firma">Con todo mi amor y cariño, tu esposito Steven ;3 💕</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN GALERÍA DE FOTOS -->
+    <section id="fotos" class="seccion">
+        <div class="tarjeta grande">
+            <button class="cerrar" onclick="volverPrincipal()">✕</button>
+            <div class="icono-grande">📸</div>
+            <h2>Nuestros Recuerdos</h2>
+            <p>Estos son algunos de los momentos más bonitos q hemos compartido juntos ;3</p>
+
+            <div class="galeria">
+                <div class="foto">
+                    <img src="fotos/foto1.jpeg" alt="Recuerdo 1">
+                    <div>
+                        <h3>Un día especial</h3>
+                        <p>Recuerdas esta fotito mi amor ? fue una de nuestras primeras estando juntitos 💕</p>
+                    </div>
+                </div>
+
+                <div class="foto">
+                    <img src="fotos/MRvolando.jpeg" alt="Recuerdo 2">
+                    <div>
+                        <h3>Un momento divertido</h3>
+                        <p>Aqui me acuerdo q estabas con lag, y yo me andaba burlando XD (igual me encantó pasar ese momento contigo, al igual como con todos los q hemos vivido ;3)</p>
+                    </div>
+                </div>
+
+                <div class="foto">
+                    <img src="fotos/abrazo1.jpeg" alt="Recuerdo 3">
+                    <div>
+                        <h3>Un abachito</h3>
+                        <p>De esos q aunque sea a la distancia, se sienten reconfortables, te transmiten una paz y una tranquilidad inefable, y te alegran el día ;3</p>
+                    </div>
+                </div>
+
+                <div class="foto">
+                    <img src="fotos/flores en mano.jpeg" alt="Recuerdo 4">
+                    <div>
+                        <h3>Un momento lindo</h3>
+                        <p>Miraaaa, recuerdas este momento ? la habíamos tomado con unas rositas en las manitas ;D (sé q ño se no tan por la luz, pero shi fue ashí uwu)</p>
+                    </div>
+                </div>
+                <div class="foto">
+                    <img src="fotos/abrazo2.jpeg" alt="Recuerdo 5">
+                    <div>
+                        <h3>Otro abachito</h3>
+                        <p>hubieron muchas másh fotitos, pero etas son las principales uwu (me encantaron todos eshos abachitos q nos dimos ;3)</p>
+                    </div>
+                </div>
+
+                <div class="foto">
+                    <img src="fotos/mirandonos.jpeg" alt="Recuerdo 6">
+                    <div>
+                        <h3>Momentos juntos</h3>
+                        <p>Aqui ño recuerdo muy bien q pashó, pero creo q yo te andaba siguiendo en ese rato Xd</p>
+                    </div>
+                </div>
+
+                <div class="foto">
+                    <img src="fotos/FFJ.jpeg" alt="Recuerdo 7">
+                    <div>
+                        <h3>Otro momentito juntitosh</h3>
+                        <p>Aqui estabamos en eshe jueguito de pescar uwu me acuerdo q la tomé cuando uste estaba distraída buscando algo Xd</p>
+                    </div>
+                </div>
+
+                <div class="foto">
+                    <img src="fotos/cargandola.jpeg" alt="Recuerdo 8">
+                    <div>
+                        <h3>Un momento hermosho</h3>
+                        <p>Si te soy sincero, me encantó demashiado ese momento, y la verdad, me encantará muchísimo másh cuando te cargue ashi en persona ;3</p>
+                    </div>
+                </div>
+
+                <div class="foto ultima-foto">
+                    <img src="fotos/ojitosjuntos.jpeg" alt="Recuerdo 9">
+                    <div>
+                        <h3>Simplemente nosotros</h3>
+                        <p>Mira, una fotito compartida de nuestros ojitos uwu me acuerdo q nos la pusimos de fotito, y ayyyy, ño sabes cuánto me encantó ese día ;3</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Mensajito especial abajo de las fotos -->
+            <div class="mensaje-recuerdos">
+
+                <p>
+
+                    Cada fotito compartida a tu lado, la llevo guardada en una partecita muy especial de mi corazoncito ;3.. muchísimas grashias por regalarme tantos momentos hermosos a tu lado mi amor ❤️✨
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN RAZONES -->
+    <div id="razones" class="seccion">
+        <div class="tarjeta">
+            <button class="cerrar" onclick="volverPrincipal()">✕</button>
+            <div class="icono-grande">💖</div>
+            <h2>Razones por las que te amo uwu</h2>
+
+            <div class="razon" id="razon">
+                Haz clic abajo para descubrir una razón ✨
+            </div>
+
+            <button class="boton" onclick="nuevaRazon()">Dale aqui para pasar a la siguiente ;3 🎲 (son muchas xd)</button>
+        </div>
+    </div>
+
+    <!-- SECCIÓN LÍNEA DE TIEMPO / MOMENTOS -->
+    <!-- =====================================================
+         NUESTRA HISTORIA / MOMENTOS
+         ===================================================== -->
+
+    <div id="momentos" class="seccion">
+        <div class="tarjeta grande">
+            <button class="cerrar" onclick="volverPrincipal()">✕</button>
+            <div class="icono-grande">✨</div>
+            <h2>Nuestra linda historia</h2>
+
+            <div class="linea-tiempo">
+
+                <!-- 1. EL COMIENZO -->
+                <div class="evento">
+                    <div class="circulo">💬</div>
+                    <div>
+                        <h3>El comienzo ✨</h3>
+                        <p>
+                            Todo inició unos días antes del 27 de septiembre. Entré a jugar como lo hacía todos los días por aburrimiento, pensando que sería un día cualquiera... hasta que te conocí. Desde ese instante mi mundo mejoró de una forma que no tienes idea; fuiste lo mejor que me pasó ;3 Me alegraste la vida con tu sola presencia y, poco a poco, cuando te veía decaída trataba de ir contigo y alegrarte, tal como tú lo hacías conmigo. Así nos fuimos ganando la confianza del otro, hasta que un día decidimos confesar lo que sentíamos en aquel puente... y sabes ?.. ese día no pude dormir de la felicidad que sentí 🥹💕
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. LAS PRIMERAS RISAS -->
+                <div class="evento">
+                    <div class="circulo">😊</div>
+                    <div>
+                        <h3>Las primeras risas 🎮🤭</h3>
+                        <p>
+                            Y luego llegaron todas esas risas que nos caracterizan uwu Me acuerdo de las llamadas interminables que duraban horas y horas, de quedarnos AFK en el juego solo para estar juntitos charlando de cualquier tontería, o de cuando te tomaba fotitos distraída buscando cosas en el juego Xd. Todas esas veces que nos reíamos por bugs absurdos, nuestras travesuras, las bromas internas que solo nosotros dos entendemos y cada momento torpe pero lindo que hemos vivido. Cada risa contigo se convirtió en mi recuerdo favorito 💕
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. HOY -->
+                <div class="evento">
+                    <div class="circulo">❤️</div>
+                    <div>
+                        <h3>Hoy y Siempre ❤️</h3>
+                        <p>
+                            Actualmente, aunque hayan problemas y otras cositas que nos dan ciertos bajones de ánimo, nosotros somos un equipo, y si uno de los dos cae, el otro siempre estará ahí para ayudarlo a levantarse uwu. Yo sé que estos últimos días incluyendo hoy, ño la has pasado del todo bien, pero me gustaría imaginarte leyendo esto con una sonrisita en tu linda carita... poke si te soy sincero, hice esto con mucho esfuerzo, dedicación y cariño sholo para sacarte una sonrisa ;3 Muchas grashias por regalarme todos eshos momentos que hemos compartido, sin importar que sean malos o tristes, me encantan poke los viví contigo, y esho es másh que suficiente para alegrarme la vida ;D Muchísimas grashias mi amor, en sherio... grashias por todo... TE AMOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 🥹💕💕💕
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN SORPRESA -->
+    <div id="sorpresa" class="seccion">
+        <div class="tarjeta">
+            <button class="cerrar" onclick="volverPrincipal()">✕</button>
+            <div class="icono-grande">🎁</div>
+            <h2>Una última sorpresa bb uwu...</h2>
+            <p>Presiona el botón de aqui abajito para descubrir un detalle final ;3</p>
+
+            <button class="boton" onclick="mostrarSorpresa()">Dale aqui ✨</button>
+
+            <div class="mensaje-final" id="mensajeFinal">
+                <div class="corazones">❤️ ✨ 💖 ✨ ❤️</div>
+                <p>
+                    Muchísimas grashias por formar parte de mi vida mi amor.. jamás olvides lo especial y única q eres para mí... TE AMOOOOOOOOOOOOOOOOOOOOOOOOO 💕💕💕
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AUDIO Y CONTROL DE MÚSICA -->
+    <audio id="musicaFondo" preload="auto" src="musicas/Elvis Presley - Can't Help Falling In Love (Official Audio).mp3"></audio>
+
+    <button class="musica" id="botonMusica" onclick="controlarMusica()">🎵</button>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
