@@ -413,21 +413,18 @@ window.addEventListener("load", () => {
 // Lista de canciones para la playlist en orden
 // Lista de canciones apuntando a tu carpeta "musicas" con los nombres exactos
 const playlist = [
-    "musicas/Elvis Presley - Can't Help Falling In Love (Official Audio).mp3",
-    "musicas/Ed Sheeran - Perfect (Official Audio).mp3",
-    "musicas/Ben E. King - Stand By Me (Official Audio).mp3",
-    "musicas/Counting Crows - Accidentally In Love (Official Audio).mp3"
+    "Elvis Presley - Can't Help Falling In Love (Official Audio).mp3",
+    "Ed Sheeran - Perfect.mp3",
+    "Ben E. King - Stand By Me (Audio).mp3",
+    "Counting Crows - Accidentally In Love (Sub. Español Lyrics).mp3"
 ];
 
 let cancionActualIndex = 0;
-// Coincide exactamente con el id="musicaFondo" de tu index.html
 const reproductorAudio = document.getElementById("musicaFondo");
 
 if (reproductorAudio) {
-    // Volumen suave de fondo al 25% para acompañar la lectura
     reproductorAudio.volume = 0.25;
 
-    // Al terminar una canción, carga y reproduce la siguiente automáticamente
     reproductorAudio.addEventListener("ended", () => {
         cancionActualIndex = (cancionActualIndex + 1) % playlist.length;
         reproductorAudio.src = playlist[cancionActualIndex];
@@ -435,7 +432,6 @@ if (reproductorAudio) {
     });
 }
 
-// Función para el botón flotante con la nota musical 🎵
 function controlarMusica() {
     if (!reproductorAudio) return;
     
@@ -446,13 +442,12 @@ function controlarMusica() {
     }
 }
 
-// Iniciar música automáticamente con el primer toque en la pantalla (requerido por celulares)
 function iniciarPlaylistConPrimerToque() {
     if (reproductorAudio && reproductorAudio.paused) {
         reproductorAudio.play().then(() => {
             console.log("Música iniciada correctamente.");
         }).catch(err => {
-            console.log("Esperando interacción para reproducción:", err);
+            console.log("Esperando toque para reproducción:", err);
         });
     }
 }
