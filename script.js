@@ -428,21 +428,17 @@ if (reproductorAudio) {
     reproductorAudio.addEventListener("ended", () => {
         cancionActualIndex = (cancionActualIndex + 1) % playlist.length;
         reproductorAudio.src = playlist[cancionActualIndex];
-        reproductorAudio.play().catch(e => console.log("Error al pasar de canción:", e));
+        reproductorAudio.play().catch(e => console.log("Error al pasar canción:", e));
     });
 }
 
-// Función para activar el reproductor al primer toque/clic
-function activarMusicaConInteraccion() {
-    if (reproductorAudio) {
+function iniciarMusica() {
+    if (reproductorAudio && reproductorAudio.paused) {
         reproductorAudio.play().then(() => {
-            console.log("Música reproduciéndose.");
-        }).catch(err => {
-            console.log("Error intentando reproducir audio:", err);
-        });
+            console.log("Reproduciendo...");
+        }).catch(e => console.log("Bloqueado por navegador:", e));
     }
 }
 
-// Escucha el primer clic o toque en cualquier lugar de la página
-document.addEventListener("click", activarMusicaConInteraccion, { once: true });
-document.addEventListener("touchstart", activarMusicaConInteraccion, { once: true });
+document.addEventListener("click", iniciarMusica, { once: true });
+document.addEventListener("touchstart", iniciarMusica, { once: true });
